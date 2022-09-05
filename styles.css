@@ -1,7 +1,3 @@
-/* 
-- Mobile: 375px
-- Desktop: 1440px
-*/
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
@@ -65,18 +61,41 @@ header {
 
 .cyan {
   border-top: 3px solid hsl(180deg, 62%, 55%);
+  grid-area: start;
 }
 
 .red {
   border-top: 3px solid hsl(0deg, 78%, 62%);
+  grid-area: middle-top;
 }
 
 .orange {
   border-top: 3px solid hsl(34deg, 97%, 64%);
+  grid-area: middle-bottom;
+  margin-top: 0;
 }
 
 .blue {
   border-top: 3px solid hsl(212deg, 86%, 64%);
+  grid-area: end;
 }
 
-/*# sourceMappingURL=styles.css.map */
+@media (min-width: 776px) {
+  .section {
+    max-width: revert;
+  }
+  .section__header {
+    max-width: 500px;
+  }
+  .section__header p {
+    padding: none;
+    margin: 1rem 0 0 0;
+  }
+  .section__card-container {
+    display: grid;
+    grid-template-areas: "start middle-top end" "start middle-bottom end";
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    align-items: center;
+  }
+}/*# sourceMappingURL=styles.css.map */
